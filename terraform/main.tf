@@ -194,7 +194,7 @@ resource "aws_eks_node_group" "node_group" {
 
 # Terraform Backend S3 Bucket
 resource "aws_s3_bucket" "tf_state" {
-  bucket        = "k8s-oneclick-tf-state" # Change if needed to be globally unique
+  bucket        = "k8s-shubham-tf-state" # Change if needed to be globally unique
   force_destroy = true
 
   versioning {
@@ -215,7 +215,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "tf_state_enc" {
 
 # DynamoDB Table for Terraform State Locking
 resource "aws_dynamodb_table" "tf_lock" {
-  name         = "k8s-oneclick-tf-lock"
+  name         = "k8s-shubham-tf-lock"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
